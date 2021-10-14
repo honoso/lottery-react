@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import web3 from './web3';
+import lottery from './lottery';
 
-function App() {
+const App = () => {
+  console.log(web3.version);
+  web3.eth.getAccounts().then(console.log);
+  lottery.methods.manager().call().then(console.log);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +26,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
